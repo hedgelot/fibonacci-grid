@@ -129,8 +129,9 @@ export default createStore<State>({
 					previousValues[0] = previousFibonacci(currentValue);
 				} else {
 					const wantedValue = previousValues[0] + previousValues[1]!;
+					const isEdgeCase = previousValues[0] === 0 && previousValues[1]! === 1 && currentValue === 2;
 
-					if (currentValue !== wantedValue || wantedValue === 0) {
+					if ((currentValue !== wantedValue || wantedValue === 0) && !isEdgeCase) {
 						currentOffset -= sequence.length;
 						clear();
 						continue;

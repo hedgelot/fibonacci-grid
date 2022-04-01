@@ -10,7 +10,7 @@ export function isFibonacciNumber(n: number)
         isPerfectSquare(5 * n * n - 4);
 }
 
-export function previousFibonacci(n: number)
+export function previousFibonacci(n: number): number
 {
     if (n == 1) return 0;
     const answer = n / ((1 + Math.sqrt(5)) / 2);
